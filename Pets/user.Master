@@ -1,0 +1,243 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="user.master.cs" Inherits="Pets.user" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Petsfriend - Home</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="images/icon.png" />
+
+    <!-- Google font (font-family: 'Roboto', sans-serif;) -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700" rel="stylesheet" />
+
+    <!-- Plugins -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/plugins.css" />
+
+    <!-- Style Css -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/custom.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="wrapper" class="wrapper">
+            <!-- Header -->
+            <header class="header">
+
+
+                <!-- Header Bottom Area -->
+                <div class="header-bottom bg-light">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-2 col-md-6 col-sm-6">
+                                <a href="index.aspx" class="header-logo">
+                                    <img src="images/logo/logo.png" alt="logo" />
+                                </a>
+                            </div>
+                            <div class="col-lg-10 d-none d-lg-block">
+
+                                <!-- Navigation -->
+                                <nav class="ho-navigation">
+                                    <ul>
+                                        <li>
+                                            <a href="Home.aspx">Home</a>
+                                        </li>
+                                        <li class="dropdown-holder">
+                                            <a href="#">Hi!
+                                                <asp:Label ID="LblUsername" runat="server" /></a>
+                                            <ul class="hodropdown">
+                                                <li><a href="myprofile.aspx">My Profile</a></li>
+                                                <li><a href="userchangepassword.aspx">Change Password</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="usercart.aspx">My CART</a></li>
+                                        <li><a href="userorder.aspx">MY ORDER</a></li>
+                                        <li>
+                                            <a href="#">Dog</a>
+                                            <ul class="megamenu">
+                                                <li><a href="#">Dog Supplies</a>
+                                                    <ul>
+                                                        <li><a href="dogfood.aspx">Dog Food</a></li>
+                                                        <li><a href="dogtreats.aspx">Dog Treats</a></li>
+                                                        <li><a href="dogtoys.aspx">Dog Toys</a></li>
+                                                        <li><a href="Dogaccessories.aspx">Dog Accessories</a></li>
+                                                        <li><a href="doggrooming.aspx">Dog Grooming & Health</a></li>
+                                                        <li><a href="dogcages.aspx">Dog Cages</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="#">Dog sUPPLIES</a>
+                                                    <ul>
+                                                        <li><a href="DogBedsFurniture.aspx">Dog Beds & Furniture</a></li>
+                                                        <li><a href="DogCollars.aspx">Dog Collars, Harnesses & Leashes</a></li>
+                                                        <li><a href="DogClothes.aspx">Dog Clothes & Apparels</a></li>
+                                                        <li><a href="DogDiapers.aspx">Dog Diapers</a></li>
+                                                        <li><a href="DogTraining.aspx">Dog Training</a></li>
+                                                        <li><a href="DogCarriersandTravelProducts.aspx">Dog Carriers & Travel Products</a></li>
+                                                        <li><a href="DogLitters.aspx">Dog Litter & Housebreaking</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown-holder">
+                                            <a href="#">CAT</a>
+                                            <ul class="hodropdown">
+                                                <li><a href="CatFood.aspx">Cat Food</a></li>
+                                                <li><a href="CatTreats.aspx">Cat Treats</a></li>
+                                                <li><a href="CatToys.aspx">Cat Toys</a></li>
+                                                <li><a href="CatBedsFurniture.aspx">Cat Beds & Furniture</a></li>
+                                                <li><a href="CatLitters.aspx">Cat Litter Supplies</a></li>
+                                                <li><a href="CatAccessories.aspx">Cat Accessories</a></li>
+                                                <li><a href="CatGrooming.aspx">Cat Grooming</a></li>
+
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown-holder">
+                                            <a href="#">FISH</a>
+                                            <ul class="hodropdown">
+
+                                                <li><a href="FishFood.aspx">Fish Food</a></li>
+
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown-holder">
+                                            <a href="#">OTHER PEST</a>
+                                            <ul class="hodropdown">
+
+                                                <li><a href="OtherPets.aspx">OTHER PETS</a></li>
+
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <asp:Button ID="Button1" runat="server" Text="LOGOUT" Style="color: #fff; border: none; font-size: 15px; font-weight: 700" OnClick="Button1_OnClick" />
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <!--// Navigation -->
+
+                            </div>
+                            <div class="col-12 d-block d-lg-none">
+                                <div class="mobile-menu clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--// Header Bottom Area -->
+
+            </header>
+            <!--// Header -->
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <!-- Footer -->
+            <footer class="footer bg-light">
+
+                <!-- Footer Top Area -->
+                <div class="footer-toparea">
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-lg-3 col-12">
+                                <div class="footer-widget widget-info">
+                                    <h5 class="footer-widget-title" style="color: #000">Contact Info</h5>
+
+                                    <ul>
+                                        <li style="color: #ffffff"><i class="ion ion-ios-pin" style="color: #ffffff"></i>B-106, New Agra, Agra
+                                        Pin Code 282005
+                                        Uttar Pradesh India </li>
+                                        <li style="color: #ffffff"><i class="ion ion-ios-call" style="color: #ffffff"></i>Call us: +91-9897490068</li>
+
+                                        <li style="color: #ffffff"><i class="ion ion-ios-mail" style="color: #ffffff"></i>Email us: <a href="#" style="color: #ffffff">info@petsfriend.co.in</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-2 col-md-4">
+                                <div class="footer-widget widget-links">
+                                    <h5 class="footer-widget-title" style="color: #000">Products</h5>
+                                    <ul>
+
+                                        <li><a href="#" style="color: #ffffff">Contact us</a></li>
+
+                                        <li><a href="myprofile.aspx" style="color: #ffffff">My account</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-2 col-md-4">
+                                <div class="footer-widget widget-links">
+                                    <h5 class="footer-widget-title" style="color: #000">Our Company</h5>
+                                    <ul>
+
+                                        <li><a href="#" style="color: #ffffff">About us</a></li>
+                                        <li><a href="#" style="color: #ffffff">Secure payment</a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-2 col-md-4">
+                                <div class="footer-widget widget-links">
+                                    <h5 class="footer-widget-title" style="color: #000">Your Account</h5>
+                                    <ul>
+                                        <li><a href="myprofile.aspx" style="color: #ffffff">Personal info</a></li>
+                                        <li><a href="usercart.aspx" style="color: #ffffff">My Cart</a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-12">
+                                <div class="footer-widget widget-customerservice">
+                                    <div class="info">
+                                        <h5 class="footer-widget-title">CUSTOMER SERVICE</h5>
+                                        <h5>SEND AN EMAIL</h5>
+                                        <h5>HOTLINE: : <a href="#">+91-9897490068</a></h5>
+
+                                    </div>
+                                    <div class="payment">
+                                        <h6>SECURE PAYMENT VIA</h6>
+                                        <img src="images/icons/payment.png" alt="footer payment">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--// Footer Top Area -->
+
+                <!-- Footer Bottom -->
+                <div class="footer-bottomarea">
+                    <div class="container">
+                        <div class="footer-copyright">
+                            <p class="copyright">Copyright &copy; <% Response.Write(DateTime.Now.Year); %>  All Rights Reserved</p>
+                        </div>
+                    </div>
+                </div>
+                <!--// Footer Bottom -->
+
+            </footer>
+            <!--// Footer -->
+        </div>
+        <!--// Wrapper -->
+
+        <!-- Js Files -->
+        <script src="js/vendor/modernizr-3.6.0.min.js"></script>
+        <script src="js/vendor/jquery-3.3.1.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+    </form>
+</body>
+</html>

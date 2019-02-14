@@ -1,0 +1,675 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FE90D1C4-F5B4-4636-A956-103ADE1B474F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pets</RootNamespace>
+    <AssemblyName>Pets</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="addcategories.aspx" />
+    <Content Include="addedusers.aspx" />
+    <Content Include="addproduct.aspx" />
+    <Content Include="addsubcategories.aspx" />
+    <Content Include="CatAccessories.aspx" />
+    <Content Include="CatBedsFurniture.aspx" />
+    <Content Include="CatFood.aspx" />
+    <Content Include="CatGrooming.aspx" />
+    <Content Include="CatLitters.aspx" />
+    <Content Include="CatToys.aspx" />
+    <Content Include="CatTreats.aspx" />
+    <Content Include="changepassword.aspx" />
+    <Content Include="Dogaccessories.aspx" />
+    <Content Include="DogBedsFurniture.aspx" />
+    <Content Include="dogcages.aspx" />
+    <Content Include="DogCarriersandTravelProducts.aspx" />
+    <Content Include="DogClothes.aspx" />
+    <Content Include="DogCollars.aspx" />
+    <Content Include="DogDiapers.aspx" />
+    <Content Include="dogfood.aspx" />
+    <Content Include="doggrooming.aspx" />
+    <Content Include="DogLitters.aspx" />
+    <Content Include="dogtoys.aspx" />
+    <Content Include="DogTraining.aspx" />
+    <Content Include="dogtreats.aspx" />
+    <Content Include="FishFood.aspx" />
+    <Content Include="forgotpassword.aspx" />
+    <Content Include="homeCatAccessories.aspx" />
+    <Content Include="homeCatBeds&amp;Furniture.aspx" />
+    <Content Include="homeCatFood.aspx" />
+    <Content Include="homeCatGrooming.aspx" />
+    <Content Include="homeCatLitters.aspx" />
+    <Content Include="homeCatToys.aspx" />
+    <Content Include="homeCatTreats.aspx" />
+    <Content Include="homeDogaccessories.aspx" />
+    <Content Include="homeDogBedsFurniture.aspx" />
+    <Content Include="homedogcages.aspx" />
+    <Content Include="homeDogCarriersandTravelProducts.aspx" />
+    <Content Include="homeDogClothes.aspx" />
+    <Content Include="homeDogCollars.aspx" />
+    <Content Include="homeDogDiapers.aspx" />
+    <Content Include="homedogfood.aspx" />
+    <Content Include="homedoggrooming.aspx" />
+    <Content Include="homeDogLitters.aspx" />
+    <Content Include="homedogtoys.aspx" />
+    <Content Include="homeDogTraining.aspx" />
+    <Content Include="homedogtreats.aspx" />
+    <Content Include="homeFishFood.aspx" />
+    <Content Include="homeOtherPets.aspx" />
+    <Content Include="homeuserview.aspx" />
+    <Content Include="index.aspx" />
+    <Content Include="myprofile.aspx" />
+    <Content Include="orderlist.aspx" />
+    <Content Include="OtherPets.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Home.Master" />
+    <Content Include="admin.Master" />
+    <Content Include="Home.aspx" />
+    <Content Include="user.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="login.aspx" />
+    <Content Include="register.aspx" />
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="usercart.aspx" />
+    <Content Include="userchangepassword.aspx" />
+    <Content Include="userorder.aspx" />
+    <Content Include="userview.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="addcategories.aspx.cs">
+      <DependentUpon>addcategories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addcategories.aspx.designer.cs">
+      <DependentUpon>addcategories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="addedusers.aspx.cs">
+      <DependentUpon>addedusers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addedusers.aspx.designer.cs">
+      <DependentUpon>addedusers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="addproduct.aspx.cs">
+      <DependentUpon>addproduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addproduct.aspx.designer.cs">
+      <DependentUpon>addproduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="addsubcategories.aspx.cs">
+      <DependentUpon>addsubcategories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addsubcategories.aspx.designer.cs">
+      <DependentUpon>addsubcategories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin.Master.cs">
+      <DependentUpon>admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin.Master.designer.cs">
+      <DependentUpon>admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="CatAccessories.aspx.cs">
+      <DependentUpon>CatAccessories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatAccessories.aspx.designer.cs">
+      <DependentUpon>CatAccessories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CatBedsFurniture.aspx.cs">
+      <DependentUpon>CatBedsFurniture.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatBedsFurniture.aspx.designer.cs">
+      <DependentUpon>CatBedsFurniture.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CatFood.aspx.cs">
+      <DependentUpon>CatFood.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatFood.aspx.designer.cs">
+      <DependentUpon>CatFood.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CatGrooming.aspx.cs">
+      <DependentUpon>CatGrooming.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatGrooming.aspx.designer.cs">
+      <DependentUpon>CatGrooming.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CatLitters.aspx.cs">
+      <DependentUpon>CatLitters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatLitters.aspx.designer.cs">
+      <DependentUpon>CatLitters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CatToys.aspx.cs">
+      <DependentUpon>CatToys.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatToys.aspx.designer.cs">
+      <DependentUpon>CatToys.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CatTreats.aspx.cs">
+      <DependentUpon>CatTreats.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatTreats.aspx.designer.cs">
+      <DependentUpon>CatTreats.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="changepassword.aspx.cs">
+      <DependentUpon>changepassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="changepassword.aspx.designer.cs">
+      <DependentUpon>changepassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dogaccessories.aspx.cs">
+      <DependentUpon>Dogaccessories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dogaccessories.aspx.designer.cs">
+      <DependentUpon>Dogaccessories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DogBedsFurniture.aspx.cs">
+      <DependentUpon>DogBedsFurniture.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DogBedsFurniture.aspx.designer.cs">
+      <DependentUpon>DogBedsFurniture.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dogcages.aspx.cs">
+      <DependentUpon>dogcages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dogcages.aspx.designer.cs">
+      <DependentUpon>dogcages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DogCarriersandTravelProducts.aspx.cs">
+      <DependentUpon>DogCarriersandTravelProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DogCarriersandTravelProducts.aspx.designer.cs">
+      <DependentUpon>DogCarriersandTravelProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DogClothes.aspx.cs">
+      <DependentUpon>DogClothes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DogClothes.aspx.designer.cs">
+      <DependentUpon>DogClothes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DogCollars.aspx.cs">
+      <DependentUpon>DogCollars.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DogCollars.aspx.designer.cs">
+      <DependentUpon>DogCollars.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DogDiapers.aspx.cs">
+      <DependentUpon>DogDiapers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DogDiapers.aspx.designer.cs">
+      <DependentUpon>DogDiapers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dogfood.aspx.cs">
+      <DependentUpon>dogfood.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dogfood.aspx.designer.cs">
+      <DependentUpon>dogfood.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="doggrooming.aspx.cs">
+      <DependentUpon>doggrooming.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="doggrooming.aspx.designer.cs">
+      <DependentUpon>doggrooming.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DogLitters.aspx.cs">
+      <DependentUpon>DogLitters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DogLitters.aspx.designer.cs">
+      <DependentUpon>DogLitters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dogtoys.aspx.cs">
+      <DependentUpon>dogtoys.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dogtoys.aspx.designer.cs">
+      <DependentUpon>dogtoys.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DogTraining.aspx.cs">
+      <DependentUpon>DogTraining.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DogTraining.aspx.designer.cs">
+      <DependentUpon>DogTraining.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dogtreats.aspx.cs">
+      <DependentUpon>dogtreats.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dogtreats.aspx.designer.cs">
+      <DependentUpon>dogtreats.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FishFood.aspx.cs">
+      <DependentUpon>FishFood.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FishFood.aspx.designer.cs">
+      <DependentUpon>FishFood.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forgotpassword.aspx.cs">
+      <DependentUpon>forgotpassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forgotpassword.aspx.designer.cs">
+      <DependentUpon>forgotpassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.Master.cs">
+      <DependentUpon>Home.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.Master.designer.cs">
+      <DependentUpon>Home.Master</DependentUpon>
+    </Compile>
+    <Compile Include="homeCatAccessories.aspx.cs">
+      <DependentUpon>homeCatAccessories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="homeCatAccessories.aspx.designer.cs">
+      <DependentUpon>homeCatAccessories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="homeCatBeds&amp;Furniture.aspx.cs">
+      <DependentUpon>homeCatBeds&amp;Furniture.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="homeCatBeds&amp;Furniture.aspx.designer.cs">
+      <DependentUpon>homeCatBeds&amp;Furniture.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="homeCatFood.aspx.cs">
+      <DependentUpon>homeCatFood.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="homeCatFood.aspx.designer.cs">
+      <DependentUpon>homeCatFood.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="homeCatGrooming.aspx.cs">
+      <DependentUpon>homeCatGrooming.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="homeCatGrooming.aspx.designer.cs">
+      <DependentUpon>homeCatGrooming.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="homeCatLitters.aspx.cs">
+      <DependentUpon>homeCatLitters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="homeCatLitters.aspx.designer.cs">
+      <DependentUpon>homeCatLitters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="homeCatToys.aspx.cs">
+      <DependentUpon>homeCatToys.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="homeCatToys.aspx.designer.cs">
+      <DependentUpon>homeCatToys.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="homeCatTreats.aspx.cs">
+      <DependentUpon>homeCatTreats.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="homeCatTreats.aspx.designer.cs">
+      <DependentUpon>homeCatTreats.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="homeDogaccessories.aspx.cs">
+      <DependentUpon>homeDogaccessories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="homeDogaccessories.aspx.designer.cs">
+      <DependentUpon>homeDogaccessories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="homeDogBedsFurniture.aspx.cs">
+      <DependentUpon>homeDogBedsFurniture.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="homeDogBedsFurniture.aspx.designer.cs">
+      <DependentUpon>homeDogBedsFurniture.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="homedogcages.aspx.cs">
+      <DependentUpon>homedogcages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="homedogcages.aspx.designer.cs">
+      <DependentUpon>homedogcages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="homeDogCarriersandTravelProducts.aspx.cs">
+      <DependentUpon>homeDogCarriersandTravelProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="homeDogCarriersandTravelProducts.aspx.designer.cs">
+      <DependentUpon>homeDogCarriersandTravelProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="homeDogClothes.aspx.cs">
+      <DependentUpon>homeDogClothes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="homeDogClothes.aspx.designer.cs">
+      <DependentUpon>homeDogClothes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="homeDogCollars.aspx.cs">
+      <DependentUpon>homeDogCollars.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="homeDogCollars.aspx.designer.cs">
+      <DependentUpon>homeDogCollars.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="homeDogDiapers.aspx.cs">
+      <DependentUpon>homeDogDiapers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="homeDogDiapers.aspx.designer.cs">
+      <DependentUpon>homeDogDiapers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="homedogfood.aspx.cs">
+      <DependentUpon>homedogfood.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="homedogfood.aspx.designer.cs">
+      <DependentUpon>homedogfood.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="homedoggrooming.aspx.cs">
+      <DependentUpon>homedoggrooming.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="homedoggrooming.aspx.designer.cs">
+      <DependentUpon>homedoggrooming.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="homeDogLitters.aspx.cs">
+      <DependentUpon>homeDogLitters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="homeDogLitters.aspx.designer.cs">
+      <DependentUpon>homeDogLitters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="homedogtoys.aspx.cs">
+      <DependentUpon>homedogtoys.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="homedogtoys.aspx.designer.cs">
+      <DependentUpon>homedogtoys.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="homeDogTraining.aspx.cs">
+      <DependentUpon>homeDogTraining.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="homeDogTraining.aspx.designer.cs">
+      <DependentUpon>homeDogTraining.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="homedogtreats.aspx.cs">
+      <DependentUpon>homedogtreats.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="homedogtreats.aspx.designer.cs">
+      <DependentUpon>homedogtreats.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="homeFishFood.aspx.cs">
+      <DependentUpon>homeFishFood.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="homeFishFood.aspx.designer.cs">
+      <DependentUpon>homeFishFood.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="homeOtherPets.aspx.cs">
+      <DependentUpon>homeOtherPets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="homeOtherPets.aspx.designer.cs">
+      <DependentUpon>homeOtherPets.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="homeuserview.aspx.cs">
+      <DependentUpon>homeuserview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="homeuserview.aspx.designer.cs">
+      <DependentUpon>homeuserview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="myprofile.aspx.cs">
+      <DependentUpon>myprofile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="myprofile.aspx.designer.cs">
+      <DependentUpon>myprofile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="orderlist.aspx.cs">
+      <DependentUpon>orderlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="orderlist.aspx.designer.cs">
+      <DependentUpon>orderlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OtherPets.aspx.cs">
+      <DependentUpon>OtherPets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OtherPets.aspx.designer.cs">
+      <DependentUpon>OtherPets.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="register.aspx.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="register.aspx.designer.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user.Master.cs">
+      <DependentUpon>user.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user.Master.designer.cs">
+      <DependentUpon>user.Master</DependentUpon>
+    </Compile>
+    <Compile Include="usercart.aspx.cs">
+      <DependentUpon>usercart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercart.aspx.designer.cs">
+      <DependentUpon>usercart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="userchangepassword.aspx.cs">
+      <DependentUpon>userchangepassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userchangepassword.aspx.designer.cs">
+      <DependentUpon>userchangepassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="userorder.aspx.cs">
+      <DependentUpon>userorder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userorder.aspx.designer.cs">
+      <DependentUpon>userorder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="userview.aspx.cs">
+      <DependentUpon>userview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userview.aspx.designer.cs">
+      <DependentUpon>userview.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="css\" />
+    <Folder Include="fonts\" />
+    <Folder Include="images\" />
+    <Folder Include="img\" />
+    <Folder Include="js\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3439</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:3439/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
