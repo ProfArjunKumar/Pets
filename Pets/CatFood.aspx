@@ -16,6 +16,8 @@
         <div class="container">
             <div class="row">
                 <!-- Register Form -->
+                <!-- Register Form -->
+                <!-- Register Form -->
                 <div class="col-lg-12 mt-30 mt-lg-0">
                     <div class="table-responsive-md">
                     <asp:DataList ID="DataList1" runat="server" DataKeyField="id" CssClass="table" DataSourceID="SqlDataSource1" OnItemCommand="DataList1_OnItemCommand" RepeatDirection="Horizontal">
